@@ -19,6 +19,11 @@ for (const [nodeName, node] of Object.entries(schema.nodes)) {
     schema.node(nodeName, attrs, children, marks);
 }
 
-handlers["text"] = ({ marks, children }: any) => schema.text(children, marks);
+handlers["text"] = ({ marks, children }: any) => {
+  if (children.length === 1) {
+    return schema.text(children[0], marks);
+  }
+  return schema.text(children, marks);
+};
 
 export const testPmJsxFactory = getJSXFactory(handlers);

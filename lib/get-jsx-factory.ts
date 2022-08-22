@@ -52,10 +52,6 @@ export function getJSXFactory<OutputType>(
       return elementHandler(props);
     }
 
-    if (children.length === 1) {
-      return elementHandler({ ...props, children: children[0] });
-    }
-
     return elementHandler({ ...props, children });
   }
 
