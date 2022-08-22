@@ -1,0 +1,8 @@
+{
+  // run entries under here with `deno task task-name [additional args]...`
+  "tasks": {
+    "test": "deno test",
+    "npm-bundle": "deno run -A scripts/npm-bundle.ts",
+    "npm-publish": "cd npm && npm publish && cd .."
+  }
+}
